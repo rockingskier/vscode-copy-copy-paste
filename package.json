@@ -1,9 +1,15 @@
 {
     "name": "copy-copy-paste",
     "displayName": "Copy Copy Paste",
-    "description": "Clipboard history that stores what you copy and hands it back when you want it.",
+    "description": "A searchable, pastable history of your clipboard.",
     "version": "0.0.1",
     "publisher": "rockingskier",
+    "repository": {
+        "url": "https://github.com/rockingskier/vscode-copy-copy-paste"
+    },
+    "bugs": {
+        "url": "https://github.com/rockingskier/vscode-copy-copy-paste/issues"
+    },
     "license": "MIT",
     "engines": {
         "vscode": "^1.14.0"

@@ -1,6 +1,6 @@
 # Copy Copy Paste README
 
-Clipboard history that stores what you copy and hands it back when you want it.
+Stores a hitory of your clipboard and make it available in a searchable quick menu.
 
 ## Features
 
