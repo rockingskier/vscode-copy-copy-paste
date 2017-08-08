@@ -20,12 +20,15 @@ const getSelectedText = () => {
     const eol = getEol(document);
 
     return editor.selections.map((selection) => {
-        const range = selection.isSingleLine ? document.lineAt(selection.start).range : selection;
+        // Copy the whole line when no text is selected
+        if (selection.start.line === selection.end.line && selection.start.character === selection.end.character) {
+            const range = document.lineAt(selection.start).range;
+            const text = editor.document.getText(range);
+            // Add a new line to mimic native bahavious
+            return `${text}${eol}`;
+        }
 
-        const text = editor.document.getText(range);
-
-        // When copying a whole line, add a new line after to mimic core functionality
-        return selection.isSingleLine ? `${text}${eol}` : text;
+        return editor.document.getText(selection);
     });
 }
 
