@@ -139,7 +139,7 @@ export function activate(context: vscode.ExtensionContext) {
     const copyCommand: vscode.Disposable = vscode.commands.registerCommand('copy-copy-paste.copy', buildCopyCutCommand(history, false));
     const cutCommand: vscode.Disposable = vscode.commands.registerCommand('copy-copy-paste.cut', buildCopyCutCommand(history, true));
     const pasteCommand: vscode.Disposable = vscode.commands.registerCommand('copy-copy-paste.history', buildHistoryCommand(history));
-    const clearCommand: vscode.Disposable = vscode.commands.registerCommand('copy-copy-paste.clear', history.clear);
+    const clearCommand: vscode.Disposable = vscode.commands.registerCommand('copy-copy-paste.clear', () => history.clear());
 
     context.subscriptions.push(copyCommand);
     context.subscriptions.push(cutCommand);
