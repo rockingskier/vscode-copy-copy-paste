@@ -3,6 +3,16 @@ All notable changes to the "copy-copy-paste" extension will be documented in thi
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [0.0.5]
+### Added
+- Add icon to package.json
+
+### Changed
+- Removed release notes from README and added a link to CHANGELOG
+
+### Fixed
+- Updated logo url in README
+
 ## [0.0.4]
 ### Added
 - A very basic logo, just so it's not the default
