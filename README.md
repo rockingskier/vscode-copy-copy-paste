@@ -1,6 +1,6 @@
 # Copy Copy Paste README
 
-![Logo](./images/icon.png "Copy Copy Paste Logo")
+![Logo](images/icon.png "Copy Copy Paste Logo")
 
 Stores a history of your clipboard and make it available in a searchable quick menu.
 
@@ -37,6 +37,4 @@ Stores a history of your clipboard and make it available in a searchable quick m
 
 ## Release Notes
 
-### 0.0.1
-
-Initial release of Copy Copy Paste with base features
+See [CHANGELOG.md]()

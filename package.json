@@ -2,6 +2,7 @@
     "name": "copy-copy-paste",
     "displayName": "Copy Copy Paste",
     "description": "A searchable, pastable history of your clipboard.",
+    "icon": "images/icon.png",
     "version": "0.0.4",
     "publisher": "rockingskier",
     "repository": {
