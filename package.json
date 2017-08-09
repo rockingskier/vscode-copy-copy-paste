@@ -2,7 +2,7 @@
     "name": "copy-copy-paste",
     "displayName": "Copy Copy Paste",
     "description": "A searchable, pastable history of your clipboard.",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "publisher": "rockingskier",
     "repository": {
         "url": "https://github.com/rockingskier/vscode-copy-copy-paste"
