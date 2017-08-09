@@ -1,5 +1,7 @@
 # Copy Copy Paste README
 
+![Logo](./images/icon.png "Copy Copy Paste Logo")
+
 Stores a history of your clipboard and make it available in a searchable quick menu.
 
 ## Features
