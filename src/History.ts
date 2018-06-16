@@ -1,7 +1,6 @@
-import * as vscode from 'vscode';
-
 export default class History {
   private buffer: Array<Array<string>>
+  private bufferLimit: number;
 
   constructor() {
     this.buffer = [];
@@ -19,7 +18,10 @@ export default class History {
     }
 
     // Add to the this.buffer
-    if (existingIndex !== 0){  // index === 0 means it is already at the top
+    if (existingIndex !== 0) {  // index === 0 means it is already at the top
+      if (this.buffer.length >= this.bufferLimit) {
+        this.buffer.pop();
+      }
       this.buffer.unshift(blocks);
     }
   }
@@ -30,5 +32,10 @@ export default class History {
 
   public clear() {
     this.buffer = [];
+  }
+
+  public setBufferLimit(bufferLimit: number) {
+    this.bufferLimit = bufferLimit;
+    this.buffer = this.buffer.slice(0, bufferLimit);
   }
 }
