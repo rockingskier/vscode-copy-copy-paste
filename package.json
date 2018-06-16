@@ -24,6 +24,18 @@
     ],
     "main": "./out/src/extension",
     "contributes": {
+        "configuration": {
+            "type": "object",
+            "title": "Clipboard History",
+            "properties": {
+                "copy-copy-paste.size": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "default": 10,
+                    "description": "Maximum number of items saved in history"
+                }
+            }
+        },
         "commands": [
             {
                 "command": "copy-copy-paste.copy",

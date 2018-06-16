@@ -28,7 +28,6 @@ Stores a history of your clipboard and make it available in a searchable quick m
 ## TODO
 
 * [ ] Tests
-* [ ] Limit clipboard history size
 * [ ] Minimum copy size
 * [ ] Maximum copy size
 * [ ] Persist history across sessions
