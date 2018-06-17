@@ -2,6 +2,7 @@
 import * as vscode from 'vscode';
 
 import History from './History';
+import ClipBoardItem from './ClipBoardItem';
 
 const DEFAULT_BUFFER_LIMIT: number = 10;
 
@@ -59,7 +60,7 @@ const buildHistoryCommand = (history: History) => () => {
     const eol = getEol(document);
 
     // Build a list of all items in history
-    const items = history.get().map((blocks, index) => {
+    const items: ClipBoardItem[] = history.get().map((blocks, index) => {
         const lines = blocks.join(eol).trim().split(eol);
         const [firstCopiedLine, ...restCopiedLines] = lines;
         const numberOfBlocks = blocks.length;
@@ -101,8 +102,11 @@ const buildHistoryCommand = (history: History) => () => {
         matchOnDescription: false,
         matchOnDetail: true
     })
-        .then((item) => {
+        .then((item: ClipBoardItem) => {
             if (!item) return;
+
+            const willMoveToTop = vscode.workspace.getConfiguration('copy-copy-paste').get('movePastedBlockToTop', true);
+            if (willMoveToTop) history.add(item.blocks);
 
             const wsEdit: vscode.WorkspaceEdit = new vscode.WorkspaceEdit();
 
@@ -149,7 +153,7 @@ export function activate(context: vscode.ExtensionContext) {
     const cutCommand: vscode.Disposable = vscode.commands.registerCommand('copy-copy-paste.cut', buildCopyCutCommand(history, true));
     const pasteCommand: vscode.Disposable = vscode.commands.registerCommand('copy-copy-paste.history', buildHistoryCommand(history));
     const clearCommand: vscode.Disposable = vscode.commands.registerCommand('copy-copy-paste.clear', () => history.clear());
-
+    
     context.subscriptions.push(copyCommand);
     context.subscriptions.push(cutCommand);
     context.subscriptions.push(pasteCommand);
