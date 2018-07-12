@@ -3,7 +3,7 @@
     "displayName": "Copy Copy Paste",
     "description": "A searchable, pastable history of your clipboard.",
     "icon": "images/icon.png",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "publisher": "rockingskier",
     "repository": {
         "url": "https://github.com/rockingskier/vscode-copy-copy-paste"
