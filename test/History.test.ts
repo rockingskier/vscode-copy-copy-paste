@@ -90,4 +90,34 @@ suite("History", () => {
             assert.equal(history.get().length, 0);
         })
     });
+
+    suite('#setBufferLimit', () => {
+        test('should limit the size of the buffer', () => {
+            const history = new History();
+            history.setBufferLimit(2);
+
+            history.add(['Copied text 1']);
+            history.add(['Copied text 2']);
+            history.add(['Copied text 3']);
+
+            assert.equal(history.get().length, 2);
+            assert.equal(history.get()[0], 'Copied text 3');
+            assert.equal(history.get()[1], 'Copied text 2');
+        });
+
+        test('should crop any existing buffer to lenth', () => {
+            const history = new History();
+
+            history.add(['Copied text 1']);
+            history.add(['Copied text 2']);
+            history.add(['Copied text 3']);
+
+            assert.equal(history.get().length, 3);
+            history.setBufferLimit(2);
+
+            assert.equal(history.get().length, 2);
+            assert.equal(history.get()[0], 'Copied text 3');
+            assert.equal(history.get()[1], 'Copied text 2');
+        });
+    });
 });
