@@ -4,8 +4,6 @@ import * as vscode from 'vscode';
 import History from './History';
 import ClipBoardItem from './ClipBoardItem';
 
-const DEFAULT_BUFFER_LIMIT: number = 10;
-
 const getEditor = (): vscode.TextEditor => vscode.window.activeTextEditor;
 
 const getDocument = (editor: vscode.TextEditor): vscode.TextDocument => editor.document;
@@ -141,19 +139,19 @@ const buildHistoryCommand = (history: History) => () => {
 
 export function activate(context: vscode.ExtensionContext) {
     vscode.workspace.onDidChangeConfiguration(() => {
-        const clipboardSize = vscode.workspace.getConfiguration('copy-copy-paste').get('size', DEFAULT_BUFFER_LIMIT);
+        const clipboardSize: number = vscode.workspace.getConfiguration('copy-copy-paste').get('size');
         history.setBufferLimit(clipboardSize);
     })
 
     const history = new History();
-    const clipboardSize = vscode.workspace.getConfiguration('copy-copy-paste').get('size', DEFAULT_BUFFER_LIMIT);
+    const clipboardSize: number = vscode.workspace.getConfiguration('copy-copy-paste').get('size');
     history.setBufferLimit(clipboardSize);
 
     const copyCommand: vscode.Disposable = vscode.commands.registerCommand('copy-copy-paste.copy', buildCopyCutCommand(history, false));
     const cutCommand: vscode.Disposable = vscode.commands.registerCommand('copy-copy-paste.cut', buildCopyCutCommand(history, true));
     const pasteCommand: vscode.Disposable = vscode.commands.registerCommand('copy-copy-paste.history', buildHistoryCommand(history));
     const clearCommand: vscode.Disposable = vscode.commands.registerCommand('copy-copy-paste.clear', () => history.clear());
-    
+
     context.subscriptions.push(copyCommand);
     context.subscriptions.push(cutCommand);
     context.subscriptions.push(pasteCommand);
