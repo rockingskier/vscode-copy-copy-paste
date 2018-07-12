@@ -25,6 +25,18 @@ Stores a history of your clipboard and make it available in a searchable quick m
 * `copy-copy-paste.history`: Display clipboard history
 * `copy-copy-paste.clear`: Clear the clipboard history
 
+## Settings
+
+* Maximum number of items saved in history
+```
+`copy-copy-paste.size`: 25
+```
+
+* When you paste a block from the clipboard history, move it to top of the history
+```
+`copy-copy-paste.movePastedBlockToTop`: true
+```
+
 ## TODO
 
 * [ ] Tests
