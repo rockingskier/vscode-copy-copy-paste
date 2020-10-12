@@ -1,9 +1,14 @@
 # Changelog
 
-All notable changes to this project will be documented in this file.
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
-and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
+### [0.0.7](https://github.com/rockingskier/vscode-copy-copy-paste/compare/v0.0.6...v0.0.7) (2020-10-12)
+
+
+### Features
+
+* copy pasted items to the host clipboard ([3f53b10](https://github.com/rockingskier/vscode-copy-copy-paste/commit/3f53b10557f25e394cb76e0032a4dd493f39b8b8))
+* persist history between workplace sessions ([bf9a8d1](https://github.com/rockingskier/vscode-copy-copy-paste/commit/bf9a8d1fa8e1b865abfcb6ee1ca043cbbfea8b43))
 
 ## [0.0.6] - 2018-07-12
 
