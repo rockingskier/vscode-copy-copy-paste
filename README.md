@@ -45,12 +45,17 @@ Stores a history of your clipboard and make it available in a searchable quick m
 `copy-copy-paste.copyPastedBlockToClipboard`: true
 ```
 
+- Persist your copy history between sessions.
+
+```
+`copy-copy-paste.persistHistory`: false
+```
+
 ## TODO
 
 - [ ] Tests
 - [ ] Minimum copy size
 - [ ] Maximum copy size
-- [ ] Persist history across sessions
 - [ ] Improve UI
 - [ ] README images
 

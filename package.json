@@ -43,6 +43,11 @@
           "type": "boolean",
           "default": true,
           "description": "When you paste a block from the clipboard history, copy it to the clipboard."
+        },
+        "copy-copy-paste.persistHistory": {
+          "type": "boolean",
+          "default": true,
+          "description": "Persist history between sessions."
         }
       }
     },

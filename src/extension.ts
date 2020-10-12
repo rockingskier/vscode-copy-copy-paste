@@ -186,7 +186,13 @@ export function activate(context: vscode.ExtensionContext) {
     history.setBufferLimit(clipboardSize);
   });
 
-  const history = new History();
+  const persistHistory: boolean = vscode.workspace
+    .getConfiguration("copy-copy-paste")
+    .get("persistHistory", false);
+
+  const history = new History(
+    persistHistory ? context.workspaceState : undefined
+  );
   const clipboardSize: number = vscode.workspace
     .getConfiguration("copy-copy-paste")
     .get("size", 25);
