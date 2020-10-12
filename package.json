@@ -38,6 +38,11 @@
           "type": "boolean",
           "default": true,
           "description": "When you paste a block from the clipboard history, move it to top of the history"
+        },
+        "copy-copy-paste.copyPastedBlockToClipboard": {
+          "type": "boolean",
+          "default": true,
+          "description": "When you paste a block from the clipboard history, copy it to the clipboard."
         }
       }
     },

@@ -39,6 +39,12 @@ Stores a history of your clipboard and make it available in a searchable quick m
 `copy-copy-paste.movePastedBlockToTop`: true
 ```
 
+- When you paste a block from the clipboard history, copy it back to the clipboard
+
+```
+`copy-copy-paste.copyPastedBlockToClipboard`: true
+```
+
 ## TODO
 
 - [ ] Tests

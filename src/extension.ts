@@ -130,10 +130,10 @@ const buildHistoryCommand = (history: History) => () => {
         return;
       }
 
-      const willMoveToTop = vscode.workspace
+      const movePastedBlockToTop = vscode.workspace
         .getConfiguration("copy-copy-paste")
         .get("movePastedBlockToTop", true);
-      if (willMoveToTop) {
+      if (movePastedBlockToTop) {
         history.add(item.blocks);
       }
 
@@ -168,6 +168,13 @@ const buildHistoryCommand = (history: History) => () => {
       wsEdit.set(document.uri, edits);
 
       vscode.workspace.applyEdit(wsEdit);
+
+      const copyPastedBlockToClipboard = vscode.workspace
+        .getConfiguration("copy-copy-paste")
+        .get("copyPastedBlockToClipboard", true);
+      if (copyPastedBlockToClipboard) {
+        vscode.env.clipboard.writeText(item.blocks.join(eol));
+      }
     });
 };
 
